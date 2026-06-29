@@ -99,6 +99,8 @@ export class InputPaneComponent implements RdsPipeline  {
     this.currentSource = source;
     // Clear constellation diagram.
     this.constellationDiagram.updateConstellationDiagram([], []);
+    // Reset all BLER graphs for streams 1-4.
+    this.blerGraph.forEach(graph => graph.reset());
   }
 
   private unsetSource() {

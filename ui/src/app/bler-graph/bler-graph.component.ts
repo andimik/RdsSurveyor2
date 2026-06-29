@@ -28,6 +28,15 @@ export class BlerGraphComponent implements AfterViewInit {
     this.blerGraphCx.fillRect(0, 0, this.blerGraphWidth, this.blerGraphHeight);
   }
 
+  // Reset the BLER graph to clear previous data
+  reset() {
+    if (this.blerGraphCx == null) {
+      return;
+    }
+    this.blerGraphCx.fillStyle = "#aaa";
+    this.blerGraphCx.fillRect(0, 0, this.blerGraphWidth, this.blerGraphHeight);
+  }
+
   updateBlerGraph(synced: boolean, ok: boolean[]) {
     if (this.blerGraphCx == null) {
       return;
